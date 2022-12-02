@@ -1,11 +1,11 @@
-const fetchRedditPosts = (subreddit, setPosts, setError) => {
+const fetchRedditPosts = (selectedSubreddit, setPosts, setError) => {
   const asyncFetch = async () => {
-    if (!subreddit) {
-      subreddit = "404";
+    if (!selectedSubreddit) {
+      selectedSubreddit = "404";
     }
     try {
       const response = await fetch(
-        `https://www.reddit.com/r/${subreddit}.json`,
+        `https://www.reddit.com/r/${selectedSubreddit}.json`,
         {
           method: "GET",
           headers: {

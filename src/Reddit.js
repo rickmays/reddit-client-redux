@@ -4,23 +4,23 @@ import fetchRedditPosts from "./fetchRedditPosts";
 import "./Reddit.css";
 
 const Reddit = ({
-  inputValue,
-  setInputValue,
+  searchTerm,
+  setSearchTerm,
   handleSubmit,
   posts,
   setPosts,
   error,
   setError,
-  subreddit,
+  selectedSubreddit,
 }) => {
-  useEffect(() => fetchRedditPosts(subreddit, setPosts, setError), [subreddit, setPosts, setError])
+  useEffect(() => fetchRedditPosts(selectedSubreddit, setPosts, setError), [selectedSubreddit, setPosts, setError])
 
   // Render
   return (
     <div>
       <SearchBar
-        inputValue={inputValue}
-        setInputValue={setInputValue}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
         handleSubmit={(e) => handleSubmit(e)}
       />
       <div id="posts">

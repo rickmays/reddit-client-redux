@@ -1,13 +1,13 @@
-const SearchBar = ({inputValue, setInputValue, handleSubmit}) => {
+const SearchBar = ({searchTerm, setSearchTerm, handleSubmit}) => {
   return (
     <div id="searchbar">
     <form onSubmit={handleSubmit}>
       <input
-        id="searchInput"
+        id="searchTerm"
         type="search"
-        value={inputValue}
+        value={searchTerm}
         placeholder="enter subreddit"
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
     </form>
   </div>

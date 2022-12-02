@@ -8,27 +8,27 @@ const App = () => {
   // Initialize state to hold fetch error
   const [error, setError] = useState(null);
   // Initialize state to hold the input value
-  const [inputValue, setInputValue] = useState("reactjs");
+  const [searchTerm, setSearchTerm] = useState("");
   // Initialize state to hold the current subreddit
-  const [subreddit, setSubreddit] = useState(inputValue);
+  const [selectedSubreddit, setSelectedSubreddit] = useState('reactjs');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubreddit(inputValue);
+    setSelectedSubreddit(searchTerm);
   };
 
   return (
     <div className="container">
       <Header />
       <Reddit
-        inputValue={inputValue}
-        setInputValue={setInputValue}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
         handleSubmit={(e) => handleSubmit(e)}
         posts={posts}
         setPosts={setPosts}
         error={error}
         setError={setError}
-        subreddit={subreddit}
+        selectedSubreddit={selectedSubreddit}
       />
     </div>
   );
